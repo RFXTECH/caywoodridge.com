@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Caywood Ridge</title>
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 17px; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #333;
+      background: #c3d9ff url('images/bg.gif') repeat-x top left;
+      line-height: 1.7;
+    }
+
+    a, a:link, a:visited { color: #3a8a6a; }
+    a:hover { color: #2d6e53; text-decoration: underline; }
+
+    img { max-width: 100%; height: auto; display: block; border: 0; }
+
+    /* ─── Page wrapper ─────────────────────────────────────── */
+    #page {
+      width: min(960px, 97vw);
+      margin: 20px auto 48px;
+      background: #ffffed;
+      border: 2px solid #38382d;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    /* ─── Header / sign ───────────────────────────────────── */
+    .site-header {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .site-header img {
+      flex: 1 1 auto;
+      width: auto;
+      height: auto;
+    }
+
+    /* ─── Body layout: main + sidebar ─────────────────────── */
+    .body-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    /* ─── Main column ──────────────────────────────────────── */
+    .main-col {
+      flex: 1 1 520px;
+      padding: 40px 36px 36px;
+      background: url('images/main_col_bg.jpg') top left no-repeat;
+    }
+
+    .main-col h1 {
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      font-weight: normal;
+      text-align: center;
+      color: #2a2a1a;
+      margin-bottom: 24px;
+    }
+
+    .main-col p {
+      font-size: 1rem;
+      margin-top: 1.1em;
+    }
+
+    .main-col p:first-of-type { margin-top: 0; }
+
+    .directions {
+      background: rgba(255,255,237,0.75);
+      border-left: 4px solid #5ca486;
+      border-radius: 3px;
+      padding: 14px 18px;
+      margin-top: 1.3em;
+      font-size: 0.97rem;
+    }
+
+    .directions .label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 1.1em;
+      padding: 9px 20px;
+      background: #5ca486;
+      color: #fff !important;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    .map-link:hover { background: #3f7d62; color: #fff !important; text-decoration: none; }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid #38382d;
+      margin: 28px 0;
+    }
+
+    .school-block {
+      margin-top: 1em;
+      padding-left: 14px;
+      border-left: 3px solid #d4cfa8;
+    }
+
+    .school-block p { margin-top: 0; font-size: 0.97rem; }
+
+    /* ─── Sidebar ──────────────────────────────────────────── */
+    .sidebar {
+      flex: 0 0 260px;
+      background: #dadad2;
+      padding: 0 0 16px;
+    }
+
+    .sidebar-inner {
+      margin: 16px 14px;
+      background: #edede9;
+      padding: 16px;
+    }
+
+    .sidebar-section { margin-bottom: 22px; }
+    .sidebar-section:last-child { margin-bottom: 0; }
+
+    .sidebar h2 {
+      font-family: Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #2a2a1a;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #c8c4b4;
+    }
+
+    .sidebar p {
+      font-family: Arial, sans-serif;
+      font-size: 0.93rem;
+      line-height: 1.6;
+      margin-top: 0.6em;
+    }
+
+    .sidebar p:first-of-type { margin-top: 0; }
+
+    .sidebar-house {
+      margin: 12px auto 0;
+      border: 2px solid #38382d;
+    }
+
+    .homes-btn {
+      display: block;
+      text-align: center;
+      margin-top: 12px;
+      padding: 9px 14px;
+      background: #5ca486;
+      color: #fff !important;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    .homes-btn:hover { background: #3f7d62; text-decoration: none; }
+
+    /* ─── Mobile: stack sidebar below main ─────────────────── */
+    @media (max-width: 720px) {
+      .site-header img { width: 100%; flex: 0 0 100%; }
+      .main-col { padding: 24px 18px; flex: 1 1 100%; }
+      .main-col h1 { font-size: 1.55rem; }
+      .sidebar { flex: 0 0 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="page">
+
+    <!-- Same Caywood Ridge sign images, now fluid -->
+    <header class="site-header">
+      <img src="images/header1.jpg" width="567" height="206" alt="Caywood Ridge sign" />
+      <img src="images/header2.jpg" width="363" height="206" alt="Caywood Ridge entrance" />
+    </header>
+
+    <div class="body-wrap">
+
+      <!-- Main content -->
+      <main class="main-col">
+
+        <h1>Welcome to Caywood Ridge</h1>
+
+        <p>Caywood Ridge is located in prestigious Oldham County. We are just outside of Crestwood, KY directly off of HWY KY 22, less than one mile past HWY 393.</p>
+
+        <p>At Caywood Ridge, you get the beauty and comfort of country living, with the convenience of city amenities just miles away. <a href="https://www.lagrangeky.net/" target="_blank" rel="noopener noreferrer">Historic Lagrange</a> is just a few miles up the road, and a huge shopping area (<a href="https://paddockshops.com/" target="_blank" rel="noopener noreferrer">The Paddock Shops</a>) is less than 20 minutes away in Louisville.</p>
+
+        <div class="directions">
+          <span class="label">How to find us:</span>
+          From I-71 take exit 18 (HWY 393) and turn South on to 393<br />
+          Go 2 miles until you reach HWY 22<br />
+          Turn left onto HWY 22 &mdash; Caywood Ridge will be on the left in less than a mile
+        </div>
+
+        <p>
+          <a class="map-link" href="https://maps.google.com/maps?f=q&amp;hl=en&amp;q=oakridge+dr,+crestwood+ky" target="_blank" rel="noopener noreferrer">View Caywood Ridge on the Map</a>
+        </p>
+
+        <hr class="section-divider" />
+
+        <p>In addition to a prime location, Caywood Ridge also has access to the best school district in the state of Kentucky.</p>
+
+        <div class="school-block">
+          <p><strong>Elementary:</strong> <a href="https://locustgrove.oldham.kyschools.us/" target="_blank" rel="noopener noreferrer">Locust Grove Elementary</a> &mdash; located just over a mile up Hwy 22. Offers enrichment programs including the Lions&#x2019; Pride After School Youth Enrichment Program.</p>
+        </div>
+
+        <div class="school-block">
+          <p><strong>Middle School:</strong> <a href="https://www.oldham.kyschools.us/eoms/" target="_blank" rel="noopener noreferrer">East Oldham Middle School (EOMS)</a> &mdash; also on Hwy 22. EOMS strives to prepare students for academic success with a positive learning environment.</p>
+        </div>
+
+        <div class="school-block">
+          <p><strong>High School:</strong> <a href="https://www.oldham.kyschools.us/ochs/index.php?option=com_mjfrontpage&amp;Itemid=75" target="_blank" rel="noopener noreferrer">Oldham County High School (OCHS)</a> &mdash; twice recognized as a National Blue Ribbon School of Excellence.</p>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="sidebar-section">
+            <h2>Available Homes</h2>
+            <p>Interested in Caywood Ridge? Browse available homes and get more information.</p>
+            <img class="sidebar-house" src="images/right_rail_house.jpg" width="223" height="121" alt="Caywood Ridge home" />
+            <a class="homes-btn" href="https://www.allhomesnow.com/crestwood/caywood-ridge/" target="_blank" rel="noopener noreferrer">Browse Listings at AllHomesNow</a>
+          </div>
+
+          <div class="sidebar-section">
+            <h2>Community News</h2>
+            <p>Stay informed with the latest from Oldham County. Check out <a href="https://www.pmg-ky1.com/oldham_era/" target="_blank" rel="noopener noreferrer">The Oldham Era</a> or follow them on <a href="https://www.facebook.com/TheOldhamEra/" target="_blank" rel="noopener noreferrer">Facebook</a> for local news and events.</p>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+
+  </div><!-- /#page -->
+
+</body>
+</html>
