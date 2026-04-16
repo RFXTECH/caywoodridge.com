@@ -178,6 +178,8 @@
     /* ─── Mobile: stack sidebar below main ─────────────────── */
     @media (max-width: 720px) {
       .site-header img { width: 100%; flex: 0 0 100%; }
+      .site-header img:first-child { order: 2; }
+      .site-header img:last-child  { order: 1; }
       .main-col { padding: 24px 18px; flex: 1 1 100%; }
       .main-col h1 { font-size: 1.55rem; }
       .sidebar { flex: 0 0 100%; }
