@@ -1,0 +1,125 @@
+/* This is the main stylesheet for CaywoodRidge.com */
+
+body {
+        margin:0;
+        padding:0;
+        background: top left url('images/bg.gif') repeat-x #c3d9ff;
+        font-family:arial,helvetica,sans-serif;
+        font-size: small !important; /* Styles for Mozilla, Safari, IE Mac */
+        font-size: x-small; /* Styles for MS IE5 PC */
+        font-size/**/:/**/small; /* Styles for IE6 PC */
+        color:#333;
+        text-align:center;
+}
+
+/* Font-size is set at approx. 11px or 8pt. */
+body div#document {
+        width:930px; /* sets overall content width */
+        font-size:95%;
+        margin:20px auto;
+        text-align:left;
+        background:#ffffed;
+        border:2px solid #38382d;
+}
+
+
+/****************** IMPORTANT DEFAULTS *******************/
+/* The following rule exists to fix an IE 5 PC bug */
+body table {
+        font-size:100%;
+}
+
+/* Zeroing element margins/padding */
+h1, h2, h3, h4, h5, h6, form, ul, ol, li {
+        margin:0;
+        padding:0;
+}
+
+/* Image defaults */
+img {
+        border:0;
+        display:inline;
+}
+
+/* Input adjustments */
+input, select, textarea {
+        font-size:100%;
+        color:#000;
+        font-family:verdana,helvetica,sans-serif;
+}
+
+td { vertical-align:top; }
+
+p {
+        margin:1em 0 0 0;
+        padding:0;
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+        color:#5ca486;
+}
+a:hover {
+        color:#5ca486;
+}
+
+ul {
+        margin-left:15px;
+}
+
+ul li {
+        padding-left:8px;
+        padding-bottom:2px;
+        /*list-style-type:none;*/
+}
+
+/****************** END IMPORTANT DEFAULTS *******************/
+
+
+
+
+/****************** UTILITY *******************/
+
+.bold { font-weight:bold; }
+.italic { font-style:italic; }
+
+h1#pageTitle {
+        font-family:georgia,serif;
+        font-size:200%;
+        text-align:center;
+        padding-bottom:20px;
+}
+
+/****************** END UTILITY *******************/
+
+
+/****************** MAJOR PAGE ELEMENTS *******************/
+#mainColumn {
+        background:top left url('images/main_col_bg.jpg') no-repeat;
+        padding:60px 35px 35px 35px;
+}
+
+#rightRail {
+        width:284px;
+        background:#dadad2;
+}
+#rightRail .rightInner {
+        padding:13px;
+        margin:0 15px 15px 15px;
+        background:#edede9;
+}
+
+#photoTable {
+        width:100%;
+        table-layout:fixed;
+}
+#photoTable td {
+        text-align:center;
+        padding-bottom:20px;
+}
+#photoTable img {
+        border:2px solid #38382d;
+}
+/****************** END MAJOR PAGE ELEMENTS *******************/

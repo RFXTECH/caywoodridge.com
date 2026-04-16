@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: caywoodridge-web
+  namespace: caywoodridge
+  labels:
+    app: caywoodridge-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: caywoodridge-web
+  template:
+    metadata:
+      labels:
+        app: caywoodridge-web
+    spec:
+      containers:
+        - name: web
+          image: ghcr.io/OWNER/REPO:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+              name: http
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 25m
+              memory: 64Mi
+            limits:
+              cpu: 100m
+              memory: 128Mi
